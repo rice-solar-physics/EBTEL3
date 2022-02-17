@@ -125,6 +125,5 @@ for lines-of-sight perpendicular and parallel to the loop axis. I_tr_perp assume
 
 ## CHANGELOG
 + January 2022, Modified to relax the assumption of subsonic flows and incorporated adaptive timegrd in IDL version of EBTEL.
-+ September 2021,  Modified to include non-uniform loop area (see above for caveats) 
 + May 2012. PC version. Modular form.
 + 2013 Jan 15, JAK, Fixed a bug in the compution of the radiation function at 10^4 K; important for computing radiation losses based on dem_tr; ge vs. gt in computing rad;  lt vs. le in computing rad_dem
