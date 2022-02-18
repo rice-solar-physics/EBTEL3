@@ -17,7 +17,7 @@ EBTEL 3 (Paper 5) relaxes the assumption of subsonic flows in papers (1-4) and u
 
 This code is the authorized version of EBTEL3 dated 2022. Updates will be made as and when necessary.This code is distributed as is. Modifications by the user are unsupported. If you believe you have encountered an error in the original (i.e. unaltered) code, create an issue or submit a pull request with the requested changes.
 
-Use of EBTEL should be acknowledged by referencing Papers 1,2,3,4, and 5 as listed above.  
+Use of EBTEL3 should be acknowledged by referencing Papers 1,2,3,4, and 5 as listed above.  
 
 ## Purpose
 
