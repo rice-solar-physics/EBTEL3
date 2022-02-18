@@ -89,7 +89,7 @@ Compute the evolution of spatially-averaged (along the field) loop quantities us
 + Hydro simulation
     + `IDL> ebtel3, time, heat, length, t, n, p, v, ta, na, pa, c11, timeout, heatout, dem_tr, dem_cor, logtdem, /classical`
 
-+ Other examples listed below are exactly the same as those provided in earlier version of EBTEL coded in EBTEL and are repeated here for completeness. 
++ Other examples listed below are exactly the same as those provided in earlier version of EBTEL [ebtel](https://github.com/rice-solar-physics/EBTEL) and are repeated here for completeness. 
 
 + Plot temperature evolution
     + `IDL> plot, time, t, xtit='Time (s)', ytit='Temperature (K)'`
