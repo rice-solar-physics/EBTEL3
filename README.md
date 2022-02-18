@@ -9,9 +9,9 @@ For more information regarding the EBTEL model see:
 + <a href="https://ui.adsabs.harvard.edu/abs/2016ApJ...829...31B">Barnes et al. 2016, ApJ, 829:31 (Paper 4)</a>
 + <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...924...13R">Rajhans et al. 2022, ApJ, 924:13 (Paper 5)</a>
 
-Papers 1-3 developed the basic framework of EBTEL which is based on 0D hydrodynamical description of coronal loops. It models single fluid plasma and assumed the flows to be subsonic at all stages and the default timestep was 1 second. See also [ebtel++](https://github.com/rice-solar-physics/ebtelPlusPlus), a C++ implementation of the EBTEL model (Paper 4) that treats the electron and ion populations separately. Note that while the IDL version of EBTEL only solves the single fluid equations, there is little or no difference between the two-fluid and single-fluid models below roughly 5 MK. An adaptive time grid was used in ebtel++ instead of default time grid of 1 second.  
+Papers 1-3 developed the basic framework of EBTEL which is based on 0D hydrodynamical description of coronal loops. It models single fluid plasma and assumed the flows to be subsonic at all stages and the default timestep was 1 second. See also [ebtel++](https://github.com/rice-solar-physics/ebtelPlusPlus), a C++ implementation of the EBTEL model (Paper 4) that models two fluid plasma (ions and electrons). An adaptive time grid was used in ebtel++ instead of default time grid of 1 second.  
 
-EBTEL 3 (Paper 5) relaxes the assumption of subsonic flows in papers (1-4) and uses an adaptive time grid ensuring proper numerical resolution of the loop's evolution in the impulsive phase. It is coded in IDL. Additionally the Mach numbers and velocities produced by EBTEL3 are in better agreement with field aligned 1D simulations. EBTEL3 models single fluid plasma. Users interested in two fluid picture will find it useful to compare results obtained from ebtel++ with ebtel3 with the latter giving more reliable estimates of flows in loops. 
+EBTEL 3 (Paper 5) relaxes the assumption of subsonic flows in papers (1-4) and uses an adaptive time grid ensuring proper numerical resolution of the loop's evolution in the impulsive phase. It is coded in IDL. Additionally the Mach numbers and velocities produced by EBTEL3 are in better agreement with field aligned 1D simulations. EBTEL3 models single fluid plasma. Users interested in two fluid picture may find it useful to compare results obtained from ebtel++ with ebtel3 with the latter giving more reliable estimates of flows in loops. 
 
 ## Terms of Use
 
@@ -22,6 +22,8 @@ Use of EBTEL3 should be acknowledged by referencing Papers 1,2,3,4, and 5 as lis
 ## Purpose
 
 Compute the evolution of spatially-averaged (along the field) loop quantities using simplified equations.  The instantaneous differential emission measure of the transition region is also computed. This version incorporates all the modifications from Paper 2 and is written in modular form for clarity. DEM parts unchanged except for TR pressure correction (see Paper 2).
+
+EBTEL3 relaxes the assumption of subsonic flows and implements an adaptive grid instead of computing quantities at uniform timestep of 1 second (see Paper 5).
 
 ## Inputs
 
