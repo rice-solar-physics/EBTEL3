@@ -23,7 +23,7 @@ This code is the authorized version of EBTEL3 dated 2022. Updates will be made a
 
 Compute the evolution of spatially-averaged (along the field) loop quantities using simplified equations.  The instantaneous differential emission measure of the transition region is also computed. This version incorporates all the modifications from Paper 2 and is written in modular form for clarity. DEM parts unchanged except for TR pressure correction (see Paper 2).
 
-EBTEL3 relaxes the assumption of subsonic flows and implements an adaptive grid instead of computing quantities at uniform timestep of 1 second (see Paper 5).
+EBTEL3 relaxes the assumption of subsonic flows and implements an adaptive grid instead of computing quantities at uniform timestep of 1 second (see Paper 6).
 
 ## Inputs
 
