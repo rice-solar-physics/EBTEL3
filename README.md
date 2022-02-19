@@ -7,7 +7,7 @@ For more information regarding the EBTEL model see:
 + <a href="http://adsabs.harvard.edu/abs/2012ApJ...752..161C">Cargill et al. 2012A, ApJ, 752:161 (Paper 2)</a>
 + <a href="http://adsabs.harvard.edu/abs/2012ApJ...758....5C">Cargill et al. 2012B, ApJ, 758:5 (Paper 3)</a>
 + <a href="https://ui.adsabs.harvard.edu/abs/2016ApJ...829...31B">Barnes et al. 2016, ApJ, 829:31 (Paper 4)</a>
-+<a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.509.4420C">Cargill et al. 2022 MNRAS 509:4420(Paper 5)</a>
++ <a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.509.4420C">Cargill et al. 2022 MNRAS 509:4420(Paper 5)</a>
 + <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...924...13R">Rajhans et al. 2022, ApJ, 924:13 (Paper 6)</a> 
 
 Papers 1-3 developed the basic framework of EBTEL which is based on 0D hydrodynamical description of coronal loops. It models single fluid plasma and assumed the flows to be subsonic at all stages and the default timestep was 1 second. See also [ebtel++](https://github.com/rice-solar-physics/ebtelPlusPlus), a C++ implementation of the EBTEL model (Paper 4) that models two fluid plasma (ions and electrons). An adaptive time grid was used in ebtel++ instead of default time grid of 1 second. Paper 5 studied the effect of variable cross-section of the loop. The code is available at [ebtel](https://github.com/rice-solar-physics/EBTEL).
