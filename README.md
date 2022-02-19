@@ -69,9 +69,9 @@ EBTEL3 relaxes the assumption of subsonic flows and implements an adaptive grid 
 ## Usage
 
 + To include the transition region DEM:
-  + `IDL> ebtel3, ttime, heat, t, n, p, v, ta, na, pa, dem_tr, dem_cor, c11, timeout, heatout,logtdem`
+  + `IDL> ebtel3, ttime, heat, t, n, p, v, ta, na, pa, dem_tr, dem_cor, c11, timeout, heatout, logtdem`
 + To include a nonthermal electron energy flux:
-  + `IDL> ebtel3, ttime, heat, t, n, p, v, ta, na, pa, dem_tr, dem_cor, c11, timeout, heatout, logtdem`, flux_nt=flux_nt`
+  + `IDL> ebtel3, ttime, heat, t, n, p, v, ta, na, pa, dem_tr, dem_cor, c11, timeout, heatout, logtdem, flux_nt=flux_nt`
 + To compute rad_ratio (Requires 25% more computing time):
   + `IDL> ebtel3, ttime, heat, t, n, p, v, ta, na, pa, dem_tr, dem_cor, c11, timeout, heatout, logtdem, f_ratio, rad_ratio`
 
