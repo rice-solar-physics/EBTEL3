@@ -7,17 +7,17 @@ For more information regarding the EBTEL model see:
 + <a href="http://adsabs.harvard.edu/abs/2012ApJ...752..161C">Cargill et al. 2012A, ApJ, 752:161 (Paper 2)</a>
 + <a href="http://adsabs.harvard.edu/abs/2012ApJ...758....5C">Cargill et al. 2012B, ApJ, 758:5 (Paper 3)</a>
 + <a href="https://ui.adsabs.harvard.edu/abs/2016ApJ...829...31B">Barnes et al. 2016, ApJ, 829:31 (Paper 4)</a>
-+ <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...924...13R">Rajhans et al. 2022, ApJ, 924:13 (Paper 5)</a>
++<a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.509.4420C">Cargill et al. 2022 MNRAS 509:4420(Paper 5)</a>
++ <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...924...13R">Rajhans et al. 2022, ApJ, 924:13 (Paper 6)</a> 
+Papers 1-3 developed the basic framework of EBTEL which is based on 0D hydrodynamical description of coronal loops. It models single fluid plasma and assumed the flows to be subsonic at all stages and the default timestep was 1 second. See also [ebtel++](https://github.com/rice-solar-physics/ebtelPlusPlus), a C++ implementation of the EBTEL model (Paper 4) that models two fluid plasma (ions and electrons). An adaptive time grid was used in ebtel++ instead of default time grid of 1 second. Paper 5 studied the effect of variable cross-section of the loop. The code is available at [ebtel](https://github.com/rice-solar-physics/EBTEL).
 
-Papers 1-3 developed the basic framework of EBTEL which is based on 0D hydrodynamical description of coronal loops. It models single fluid plasma and assumed the flows to be subsonic at all stages and the default timestep was 1 second. See also [ebtel++](https://github.com/rice-solar-physics/ebtelPlusPlus), a C++ implementation of the EBTEL model (Paper 4) that models two fluid plasma (ions and electrons). An adaptive time grid was used in ebtel++ instead of default time grid of 1 second.  
-
-EBTEL 3 (Paper 5) relaxes the assumption of subsonic flows in papers (1-4) and uses an adaptive time grid ensuring proper numerical resolution of the loop's evolution in the impulsive phase. It is coded in IDL. Additionally the Mach numbers and velocities produced by EBTEL3 are in better agreement with field aligned 1D simulations. EBTEL3 models single fluid plasma. Users interested in two fluid picture may find it useful to compare results obtained from ebtel++ with ebtel3 with the latter giving more reliable estimates of flows in loops. 
+EBTEL 3 (Paper 6) relaxes the assumption of subsonic flows in papers (1-5) and uses an adaptive time grid ensuring proper numerical resolution of the loop's evolution in the impulsive phase. It is coded in IDL. Additionally the Mach numbers and velocities produced by EBTEL3 are in better agreement with field aligned 1D simulations. EBTEL3 models single fluid plasma. Users interested in two fluid picture may find it useful to compare results obtained from ebtel++ with ebtel3 with the latter giving more reliable estimates of flows in loops. 
 
 ## Terms of Use
 
 This code is the authorized version of EBTEL3 dated 2022. Updates will be made as and when necessary.This code is distributed as is. Modifications by the user are unsupported. If you believe you have encountered an error in the original (i.e. unaltered) code, create an issue or submit a pull request with the requested changes.
 
-Use of EBTEL3 should be acknowledged by referencing Papers 1,2,3,4, and 5 as listed above.  
+
 
 ## Purpose
 
@@ -69,11 +69,11 @@ EBTEL3 relaxes the assumption of subsonic flows and implements an adaptive grid 
 ## Usage
 
 + To include the transition region DEM:
-  + `IDL> ebtel2, ttime, heat, t, n, p, v, ta, na, pa, dem_tr, dem_cor, c11, timeout, heatout,logtdem`
+  + `IDL> ebtel3, ttime, heat, t, n, p, v, ta, na, pa, dem_tr, dem_cor, c11, timeout, heatout,logtdem`
 + To include a nonthermal electron energy flux:
-  + `IDL> ebtel2, ttime, heat, t, n, p, v, ta, na, pa, dem_tr, dem_cor, c11, timeout, heatout, logtdem`, flux_nt=flux_nt`
+  + `IDL> ebtel3, ttime, heat, t, n, p, v, ta, na, pa, dem_tr, dem_cor, c11, timeout, heatout, logtdem`, flux_nt=flux_nt`
 + To compute rad_ratio (Requires 25% more computing time):
-  + `IDL> ebtel2, ttime, heat, t, n, p, v, ta, na, pa, dem_tr, dem_cor, c11, timeout, heatout, logtdem, f_ratio, rad_ratio`
+  + `IDL> ebtel3, ttime, heat, t, n, p, v, ta, na, pa, dem_tr, dem_cor, c11, timeout, heatout, logtdem, f_ratio, rad_ratio`
 
 ### Example Run
 
@@ -124,8 +124,3 @@ For observations in which temperature response function, G(T), has units of DN s
 
 for lines-of-sight perpendicular and parallel to the loop axis. I_tr_perp assumes that the transition region is thinner than l_pix. See `intensity_ebtel.pro` for more information.
 
-
-## CHANGELOG
-+ January 2022, Modified to relax the assumption of subsonic flows and incorporated adaptive timegrd in IDL version of EBTEL.
-+ May 2012. PC version. Modular form.
-+ 2013 Jan 15, JAK, Fixed a bug in the compution of the radiation function at 10^4 K; important for computing radiation losses based on dem_tr; ge vs. gt in computing rad;  lt vs. le in computing rad_dem
