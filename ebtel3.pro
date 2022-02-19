@@ -60,13 +60,11 @@
      ;
      ; USAGE:
      ;   To include the transition region DEM:
-     ;      IDL> ebtel2, ttime, heat, t, n, p, v, dem_tr, dem_cor, logtdem
-     ;   To exclude the transition region DEM (faster):
-     ;      IDL> ebtel2, ttime, heat, t, n, p, v
+     ;      IDL> ebtel3, ttime, heat, t, n, p, v, ta, na, pa, dem_tr, dem_cor, c11, timeout, heatout, logtdem
      ;   To include a nonthermal electron energy flux:
-     ;      IDL> ebtel2, ttime, heat, t, n, p, v, flux_nt=flux_nt
+     ;      IDL> ebtel3, ttime, heat, t, n, p, v, ta, na, pa, dem_tr, dem_cor, c11, timeout, heatout, logtdem, flux_nt=flux_nt
      ;   To compute rad_ratio:
-     ;      IDL> ebtel2, ttime, heat, t, n, p, v, dem_tr, dem_cor, logtdem, f_ratio, rad_ratio
+     ;      IDL> ebtel3, ttime, heat, t, n, p, v, ta, na, pa, dem_tr, dem_cor, c11, timeout, heatout, logtdem, f_ratio, rad_ratio
      ;      (Takes 25% more computing time.)
      ;
      ; INTENSITIES:
