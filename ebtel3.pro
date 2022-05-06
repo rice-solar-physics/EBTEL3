@@ -147,7 +147,9 @@
        print, '* * * * No initial loop heating * * * *'
        goto, jump99
      endif
-     identnum = round(10000.*randomu(seed,1)) 
+     identnum1 = round(1000000000.*randomu(seed,1)) 
+     identnum2 = round(1000000000.*randomu(seed,1)) 
+     identnum3 = round(1000000000.*randomu(seed,1)) 
      ;Only for the purpose of creating temporary files so that multiple ebtel codes can run in same directory
      q = heat ; user defined heating array
      qtemporary = heat ; temporary value of heating taken while converting uniform grid into adaptive grid
@@ -533,7 +535,7 @@
      for ii = 0,450 do ddem_cor(*,ii) = abs(interpol(reform(dem_cor(0:xyz,ii)),timeout(0:xyz),timestamppp))
      ddem_tr = fltarr(2001,451)
      for ii = 0,450 do ddem_tr(*,ii) = abs(interpol(reform(dem_tr(0:xyz,ii)),timeout(0:xyz),timestamppp))
-     save,filename = 'temp'+STRTRIM(identnum,2)+STRTRIM(mmm,2)+'.sav',tt,nn,pp,vv,tta,nna,ppa,cc11,timestamppp,hheat,ddem_tr,ddem_cor 
+     save,filename = 'temp'+STRTRIM(identnum1,2)+STRTRIM(identnum2,2)+STRTRIM(identnum3,2)+STRTRIM(mmm,2)+'.sav',tt,nn,pp,vv,tta,nna,ppa,cc11,timestamppp,hheat,ddem_tr,ddem_cor 
      t = fltarr(nntot) ; creates temperature array
      n = fltarr(nntot) ; creates density array
      ta = fltarr(nntot) ; creates apex temperature array
@@ -582,7 +584,7 @@
      dem_cor = fltarr((2001.*mmm)-mmm+1,451)
      dem_tr = fltarr((2001.*mmm)-mmm+1,451)
      for xxx = 0,mmm-1 do begin
-     restore,'temp'+STRTRIM(identnum,2)+STRTRIM(xxx,2)+'.sav',/v   
+     restore,'temp'+STRTRIM(identnum1,2)+STRTRIM(identnum2,2)+STRTRIM(identnum3,2)+STRTRIM(xxx,2)+'.sav',/v   
      if xxx eq 0 then yyy = 0 else yyy = 1
      t(2000.*xxx+yyy:2000.*(xxx+1.))   =   tt(yyy:2000)
      n(2000.*xxx+yyy:2000.*(xxx+1.))   =   nn(yyy:2000)
@@ -597,7 +599,7 @@
      heatout(2000.*xxx+yyy:2000.*(xxx+1.)) = hheat(yyy:2000)
      timeout(2000.*xxx+yyy:2000.*(xxx+1.)) = timestamppp(yyy:2000)
      endfor
-     afiles = findfile('temp'+STRTRIM(identnum,2)+'*.sav')
+     afiles = findfile('temp'+STRTRIM(identnum1,2)+STRTRIM(identnum2,2)+STRTRIM(identnum3,2)+'*.sav')
      file_delete,afiles[*]
      jump99:
      return
