@@ -571,7 +571,6 @@
      heatout(0) = hheat(i-1)
      mmm = mmm+1
     endwhile
-    print,'mm',mmm,identnum
      heatout = fltarr((2001.*mmm)-mmm+1) 
      timeout = fltarr((2001.*mmm)-mmm+1) 
      t = fltarr((2001.*mmm)-mmm+1)
