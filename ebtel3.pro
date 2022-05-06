@@ -1,5 +1,5 @@
 ;This version of EBTEL solves the 0D equations for a single fluid plasma and does not assume it to be subsonic.
-   pro ebtel2, ttime, heat, length, t, n, p, v, ta, na, pa, c11,timeout,heatout, dem_tr, dem_cor,  $
+   pro ebtel3, ttime, heat, length, t, n, p, v, ta, na, pa, c11,timeout,heatout, dem_tr, dem_cor,  $
        logtdem, f_ratio, rad_ratio, cond, rad_cor,$
        classical=classical, dynamic=dynamic, dem_old=dem_old, $
        flux_nt=flux_nt, energy_nt=energy_nt, rtv=rtv
